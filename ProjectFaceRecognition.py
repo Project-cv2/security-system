@@ -1,3 +1,4 @@
+
 import numpy as np
 import cv2 as cv
 
@@ -8,10 +9,9 @@ people=['Ben Afflek', 'Elton John', 'Jerry Seinfield', 'Madonna', 'Mindy Kaling'
 
 face_recognizer=cv.face.LBPHFaceRecognizer_create()
 face_recognizer.read('face_trainedMe.yml')
-cap=cv.VideoCapture(0)
-x=True
+cap=cv.VideoCapture(0,cv.CAP_DSHOW)
 
-while x:
+while cap.isOpened():
 
     success,img=cap.read()
 
